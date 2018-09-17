@@ -1,3 +1,4 @@
+import constants
 import random
 
 compass = {
@@ -19,7 +20,7 @@ def get_range() -> int:
 
 def get_shape() -> dict:
     shape = {}
-    shape['type'] = random.choice(['sphere', 'cube', 'cylinder', 'cone'])
+    shape['type'] = random.choice(constants.SPELL_SHAPES)
     if shape['type'] in ['cone', 'cylinder']:
         shape['radius'] = random.choice(range(5, 20, 5))
     return shape
