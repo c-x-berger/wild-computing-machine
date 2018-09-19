@@ -5,15 +5,15 @@ import random
 import shaper
 
 compass = {
-    "N": "North",
-    "S": "South",
-    "E": "East",
-    "W": "West",
+    "N": "north",
+    "S": "south",
+    "E": "east",
+    "W": "west",
     "L": "along your line-of-sight"
 }
 directions = {
     'cone': compass,
-    'cylinder': {'U': 'Pointed upwards', **compass}
+    'cylinder': {'U': 'pointed upwards', **compass}
 }
 
 
