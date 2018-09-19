@@ -1,5 +1,6 @@
 DAMAGE_TYPES = ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning',
                 'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
+CONDITIONS = ['blinded', 'charmed', 'deafened', 'fatigued', 'frightened', 'incapacitated', 'invisible', 'paralyzed', 'petrified', 'poisoned', 'restrained', 'stunned', 'unconcious']
 """List of shapes for targeting."""
 SPELL_SHAPES = ['cube', 'cone', 'cylinder', 'sphere', 'hemisphere']
 """List of things targets may transform into"""
