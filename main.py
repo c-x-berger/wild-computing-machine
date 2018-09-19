@@ -51,8 +51,7 @@ if __name__ == '__main__':
     if (effect['type'] == 'damage'):
         fin += suffix.format(effect['amount'], effect['d_type'])
         if (shape['shape']['type'] != 'touch'):
-            fin += " to all creatures in a {1} foot {0}".format(
-                shape['shape']['type'], shape['range'])
+            fin += " to all creatures in a {}".format(shape_txt)
         else:
             fin += " to the next creature you touch"
     elif (effect['type'] == 'transform' or effect['type'] == 'resize'):
