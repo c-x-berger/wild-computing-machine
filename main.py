@@ -26,7 +26,7 @@ def rand_center() -> str:
     return "you"
 
 
-if __name__ == '__main__':
+def get_spell_string() -> str:
     effect = effector.random_resolve()
     shape = shaper.create_spell_shape()
     fin = "You...\n"
@@ -37,8 +37,8 @@ if __name__ == '__main__':
             list(directions[shape['shape']['type']].items()))
         shape_txt = "{} foot long {}, {} feet across at the base, directed {}, ".format(
             shape['range'], shape['shape']['type'], shape['shape']['radius'] * 2, direct)
-        shape_txt += "with its apex on {}".format(rand_center(
-        )) if shape['shape']['type'] == 'cone' else "with its base centered on {}".format(rand_center())
+        center = "you" if key == 'L' else rand_center()
+        shape_txt += "with its apex on {}".format(center) if shape['shape']['type'] == 'cone' else "with its base centered on {}".format(center)
     elif ('sphere' in shape['shape']['type']):
         shape_txt = "{}, with a diameter of {} feet, ".format(
             shape['shape']['type'], shape['range'])
@@ -64,11 +64,15 @@ if __name__ == '__main__':
                 effect['duration'])
         elif (effect['type'] == 'resize'):
             fin += suffix.format(
-                select, 'grow' if effect['amount'] > 0 else 'shrink', abs(effect['amount']))
+                select, 'grow', effect['amount'])
             if (effect['duration'] is not 0):
                 fin += " for {} minutes".format(effect['duration'])
     elif (effect['type'] == 'create'):
         # create ignores shape
         fin += suffix.format(effect['amount'], effect['create_type'])
         fin += " in any shape, centered on " + rand_center()
-    print(fin)
+    return fin
+
+
+if __name__ == '__main__':
+    print(get_spell_string())
