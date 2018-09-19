@@ -1,4 +1,5 @@
-DAMAGE_TYPES = ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning', 'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
+DAMAGE_TYPES = ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning',
+                'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
 """List of shapes for targeting."""
 SPELL_SHAPES = ['cube', 'cone', 'cylinder', 'sphere', 'hemisphere']
 """List of things targets may transform into"""
@@ -15,12 +16,19 @@ TRANSFORM_SHAPES = {
     },
     'rock': {
         'animate': False,
-        'live': True,
-        'size': 'small' 
+        'live': False,
+        'size': 'small'
     },
     'wolf': {
         'animate': True,
         'live': True,
         'size':  'medium',
     }
+}
+"""List of things to follow `You...` per effect type"""
+YOU_SUFF_TYPE = {
+    'damage': 'deal {} {} damage',
+    'resize': 'cause {} to {} {} inches',
+    'transform': 'transform {} into {} as if by True Polymorph',
+    'create': 'create {} cubic feet of {}'
 }
