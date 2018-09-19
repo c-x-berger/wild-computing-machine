@@ -1,8 +1,5 @@
-import common
-import constants
-import effector
+from . import common, constants, effector, shaper
 import random
-import shaper
 
 compass = {
     "N": "north",

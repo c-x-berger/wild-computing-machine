@@ -1,5 +1,5 @@
-import common
-import constants
+from . import common
+from . import constants
 import random
 
 e_types = ['damage', 'resize', 'transform', 'create']
